@@ -1,0 +1,11 @@
+<div id="search-component">
+    <mat-label>Search your hero </mat-label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    <ul class="search-result">
+        <li *ngFor="let hero of heroes$ | async">
+            <a (click)="openDialog(hero)">
+                You chose: <i>{{hero.name}}</i>
+            </a>
+        </li>
+    </ul>
+</div>
